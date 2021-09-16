@@ -17,18 +17,18 @@ class ApiList extends React.Component {
     }
 
     apiDataHandle = (type) => {
-        console.log(type)
         const filterData = APIData.filter(data => data.apiType === type);
         this.setState({
             apis: filterData,
             selectedCategory: type
-        })
-        this.searchApi(this.state.inputSearch);
+        },()=>{this.searchApi(this.state.inputSearch);})
+        
     }
 
     searchApi = (apiName) => {
+        let search = [];
+
         if (apiName) {
-            let search = [];
             if (this.state.selectedCategory) {
                 search = APIData.filter(data => data.apiName.includes(apiName) && data.apiType === this.state.selectedCategory)
 
@@ -37,11 +37,21 @@ class ApiList extends React.Component {
 
             }
 
-            this.setState({
-                apis: search,
-                inputSearch: apiName
-            });
+        }else{
+            if (this.state.selectedCategory) {
+                search = APIData.filter(data => data.apiType === this.state.selectedCategory)
+
+            } else {
+                search = APIData;
+
+            }
         }
+
+        
+        this.setState({
+            apis: search,
+            inputSearch: apiName
+        });
     }
 
     render() {
