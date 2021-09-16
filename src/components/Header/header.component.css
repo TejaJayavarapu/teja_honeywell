@@ -1,0 +1,17 @@
+.app-header {
+    background: blueviolet;
+    color: white;
+    font-size: 30px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+  }
+
+ .app-title{
+
+ }
+
+ .app-options{
+
+ }

@@ -1,0 +1,27 @@
+.header {
+  background: #1abc9c;
+  margin-top: 1rem;
+  color: white;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+
+.wrapper{
+  border: 1px solid blanchedalmond;
+}
+.active{
+  background: chocolate;
+}
+
+.item{
+  display: inline;
+  border-radius: 10%;
+  margin-left: 10px;
+  font-size: medium;
+  border: 1px solid blanchedalmond;
+  padding: 8px;
+}
